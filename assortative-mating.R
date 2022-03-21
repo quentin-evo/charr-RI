@@ -1,7 +1,6 @@
 
-data<-read.table("~/Documents/Analyses/Pre-zygotic/AM_experiment/boris_output.txt",h=T) # Import data
+data<-read.table("~/boris_output.txt",h=T) # Import data
 tail(data)
-# ("~/Documents/Analyses/Pre-zygotic/2017 survey/survey.Rdata")
 
 # Install packages (to be done once for all)
 library(tidyr)
