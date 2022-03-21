@@ -1,13 +1,13 @@
 library(tidyr)
 library(ggplot2)
 
-d1<-read.table("~/PhD/data/analyses/Post-zygotic/Liver_project/free-embryos-sizes.txt",h=T)
+d1<-read.table("~/free-embryos-sizes.txt",h=T)
 d1<-separate(d1,col = fam,into = c("date","fam"),sep = 2)
 d1$age<-rep(2,nrow(d1))
 liver1$age<-rep(10,nrow(liver1))
 
-size.jj<-read.table("~/PhD/writings/Post zygotic mechanisms/Trait covariance/Figures-n-tables/Hybrid-traits-Tables/bucket-june.txt",h=T)
-density.jj<-read.table("~/PhD/writings/Post zygotic mechanisms/Trait covariance/Figures-n-tables/Hybrid-traits-Tables/density-bucket-june.txt", h=T)
+size.jj<-read.table("~/bucket-june.txt",h=T)
+density.jj<-read.table("~/density-bucket-june.txt", h=T)
 names(size.jj)<-c("fam","length_mm","weight","age")
 size.jj<-merge(size.jj, density.jj, by.x = "fam",by.y = "bucket",all.x = T)
 size.jj$age<-as.numeric(size.jj$age)
